@@ -83,11 +83,6 @@ app.post('/auth', async (req, res) => {
 
         if (!nickname && !password) return res.status(401).json({ error: "Введите все данные" });
 
-        for (const pattern of sqlInjectionPatterns) { 
-            if (pattern.test(nickname)) res.status(400).json({ error: "Введите настоящий никнейм" });
-            if (pattern.test(password)) res.status(400).json({ error: "Введите настоящий пароль" });       
-        }
-
         const curUser = await Users.findOne({ where: { nickname } });
 
         if (!curUser) return res.status(403).json({ error: "Нет такого пользователя" });
@@ -223,3 +218,4 @@ const createUsers = async () => {
     await admin.save();
 
 }
+
