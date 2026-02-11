@@ -427,7 +427,7 @@
 
         const curUser = async () => {
             try {
-                const res = await fetch('http://localhost:3000/getCurUser');
+                const res = await fetch('../getCurUser');
                 const data = await res.json();
 
                 if (!data) {
@@ -453,5 +453,6 @@
     </script>
 
 </body>
+
 
 </html>
