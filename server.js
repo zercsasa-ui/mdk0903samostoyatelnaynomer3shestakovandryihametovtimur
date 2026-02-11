@@ -83,7 +83,7 @@ app.post('/auth', async (req, res) => {
 
         if (!nickname && !password) return res.status(401).json({ error: "Введите все данные" });
 
-        for (pattern in sqlInjectionPatterns) { 
+        for (const pattern of sqlInjectionPatterns) { 
             if (pattern.test(nickname)) res.status(400).json({ error: "Введите настоящий никнейм" });
             if (pattern.test(password)) res.status(400).json({ error: "Введите настоящий пароль" });       
         }
@@ -221,4 +221,5 @@ const createUsers = async () => {
     await andriy.save();
     await timur.save();
     await admin.save();
+
 }
