@@ -434,7 +434,7 @@
                     document.getElementById('changeBtn').style.display = 'none';
                     document.getElementById('addFriend').onclick = () => window.location.href = "../login";
                 } else {
-                    if (data.uid == window.location.href.slice(27)) {
+                    if (data.uid == window.location.href.slice(window.location.href.indexOf('user/') + 5)) {
                         document.getElementById('addFriend').style.display = 'none';
                         document.getElementById('changeBtn').onclick = () => window.location.href = "../change";
                     } else {
@@ -456,5 +456,6 @@
 
 
 </html>
+
 
 
