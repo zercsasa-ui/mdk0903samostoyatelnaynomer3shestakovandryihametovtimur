@@ -158,7 +158,7 @@
                 h2.textContent = `${user.nickname}`
 
                 divU.addEventListener('click', () => {
-                    window.location.href = 'http://localhost:3000/user/' + user.uid;
+                    window.location.href = '/user/' + user.uid;
                 });
 
                 divU.append(div)
@@ -172,5 +172,6 @@
         document.addEventListener('DOMContentLoaded', () => { usersa(); curUser() });
     </script>
 </body>
+
 
 </html>
