@@ -400,7 +400,7 @@
 
         const setUser = async () => {
             try {
-                const curUid = window.location.href.slice(window.location.href.indexOf('user/') + 1);
+                const curUid = window.location.href.slice(window.location.href.indexOf('user/') + 5);
                 const res = await fetch(`../getUser/${curUid}`);
                 const data = await res.json();
 
@@ -456,4 +456,5 @@
 
 
 </html>
+
 
