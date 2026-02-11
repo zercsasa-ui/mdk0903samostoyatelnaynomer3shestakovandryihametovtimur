@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная страница</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0 auto;
+            padding: 0 0;
+            font-family: "Jura", sans-serif;
+            font-optical-sizing: auto;
+            font-style: normal;
+            user-select: none;
+
+
+        }
+
+        .goLog {
+            margin-top: 100px;
+            margin-bottom: 190px;
+            padding: 4px;
+            border-radius: 3px;
+            border: none;
+            color: white;
+            background-color: rgb(129, 44, 226);
+            transition: all 0.5s;
+            font-size: 18px;
+        }
+
+        .goLog:hover {
+            background-color: rgb(121, 31, 163);
+            scale: 1.2;
+        }
+
+        main {
+            background-color: #2A2A2A;
+            color: white;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+        }
+
+        #users {
+            display: flex;
+            width: 100vw;
+
+
+        }
+
+        #users .user {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 220px;
+            height: 350px;
+            box-shadow: rgba(237, 155, 253, 0.658) 0px 15px 40px 10px;
+            transition: box-shadow 0.9s, translate 0.7s, scale 0.6s, filter 0.6s;
+            overflow: hidden;
+            position: relative;
+            filter: drop-shadow(0 200px 10px rgba(0, 0, 0, 0));
+            cursor: pointer;
+
+        }
+
+        #users .user:hover {
+            box-shadow: none;
+            scale: 1.1;
+            filter: drop-shadow(0 120px 10px rgba(0, 0, 0, 0.26));
+        }
+
+        #users .user:hover div {
+            translate: 0px 0px;
+        }
+
+        #users h1 {
+            text-align: center;
+            font-size: 19px;
+            position: absolute;
+            translate: 0px 130px;
+            line-height: 34px;
+            width: 220px;
+            z-index: 1001;
+        }
+
+        #users img {
+            border-radius: 10px;
+            width: 220px;
+            height: 350px;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        #users .user div {
+            transition: all 0.7s;
+            position: absolute;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.774) 60%);
+            width: 220px;
+            translate: 0px 100px;
+            height: 350px;
+            z-index: 1000;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <main>
+        <form action="/logout" method="post" id="logout">
+            <button class="goLog" type="submit">Выйти из аккаунта</button>
+        </form>
+        <button class="goLog" id="login" onclick="window.location.href = '/login'">
+            Авторизация
+        </button>
+
+        <div id="users">
+        </div>
+    </main>
+
+
+    <script>
+        const curUser = async () => {
+            const res = await fetch('/getCurUser');
+            const data = await res.json();
+
+            if (data == null) document.getElementById('logout').style.display = 'none';
+            else document.getElementById('login').style.display = 'none';
+        }
+
+        const usersa = async () => {
+            const res = await fetch('/api/users');
+            const users = await res.json();
+
+            users.forEach(user => {
+                const divU = document.createElement('div');
+                divU.classList.add('user');
+
+                const div = document.createElement('div');
+
+                const img = document.createElement('img');
+                img.src = `./img/${user.imgPathName}/ava.jpg`;
+
+                const h1 = document.createElement('h1');
+                h1.textContent = `${user.name}`
+
+                const h2 = document.createElement('h1');
+                h2.textContent = `${user.nickname}`
+
+                divU.addEventListener('click', () => {
+                    window.location.href = 'http://localhost:3000/user/' + user.uid;
+                });
+
+                divU.append(div)
+                divU.append(img)
+                divU.append(h1)
+                divU.append(h2)
+                document.getElementById('users').append(divU);
+            });
+        };
+
+        document.addEventListener('DOMContentLoaded', () => { usersa(); curUser() });
+    </script>
+</body>
+
+</html>

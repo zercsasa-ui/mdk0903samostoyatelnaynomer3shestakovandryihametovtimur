@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Изменение профиля</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0 auto;
+            padding: 0 0;
+            font-family: "Jura", sans-serif;
+            font-optical-sizing: auto;
+            font-style: normal;
+            user-select: none;
+        }
+
+        body {
+            background-color: #2A2A2A;
+            color: white;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        form {
+        
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 360px;
+        }
+
+        body>h1 {
+            margin-bottom: 30px;
+        }
+
+        form div {
+            display: flex;
+            width: 100%;
+
+        }
+
+        form input {
+            width: 40%;
+
+        }
+        
+        form textarea {
+            width: 40%;
+
+        }
+        form label{
+            width: 60px;
+        }
+
+        form button {
+            width: 80%;
+            font-size: 16px;
+            padding: 3px 0;
+            background-color: white;
+            transition: all 0.4s;
+        }
+
+        form button:hover {
+            background-color: rgb(187, 167, 167);
+            color: white;
+        }
+        body>button{
+            margin: 0;
+            padding: 40px 50px;
+            background-color: rgba(255, 222, 173, 0);
+            border: none;
+            width: fit-content;
+            margin-bottom: 235px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <button id="backBtn">
+        <img src="/img/Group 11.png" alt="">
+    </button>
+    <form action="/changeProfile" method="post">
+        <div>
+            <label for="nickname">Никнейм</label>
+            <input type="text" name="nickname" id="">
+        </div>
+        <div>
+            <label for="name">ФИО</label>
+            <input type="text" name="name" id="">
+        </div>
+        <div>
+            <label for="class">Классификация</label>
+            <input type="text" name="classs" id="">
+        </div>
+        <div>
+            <label for="algorithm">Алгоритм</label>
+            <input type="text" name="algorithm" id="">
+        </div>
+        <div>
+            <label for="description">Описание</label>
+            <textarea type="text" cols="30" name="description" id=""></textarea>
+                <!-- <textarea name="" id="" cols="30" rows="10"></textarea> -->
+        </div>
+        <div>
+            <label for="password">Пароль</label>
+            <input type="text" name="password" id="">
+        </div>
+        <button type="submit">Сохранить</button>
+    </form>
+
+    <script>
+        const curUser = async () => {
+            const res = await fetch('/getCurUser');
+            const data = await res.json();
+
+            document.getElementById('backBtn').addEventListener('click', () => window.location.href = `user/${data.uid}`);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => curUser());
+    </script>
+
+</body>
+
+</html>

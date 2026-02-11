@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авторизация</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap" rel="stylesheet">
+    <style>
+             * {
+            margin: 0 auto;
+            padding: 0 0;
+            font-family: "Jura", sans-serif;
+            font-optical-sizing: auto;
+            font-style: normal;
+            user-select: none;
+        }
+        body{
+            background-color: #2A2A2A;
+            color: white;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        body>button{
+            margin: 0;
+            padding: 40px 50px;
+            background-color: rgba(255, 222, 173, 0);
+            border: none;
+            width: fit-content;
+            margin-bottom: 235px;
+        }
+
+        form{
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 360px;
+        }
+        body>h1{
+            margin-bottom: 30px;
+        }
+        form div{
+            display: flex;
+            width: 100%;
+    
+        }
+        form input{
+            width: 60%;
+       
+        }
+        form button{
+            width: 88%;
+            font-size: 16px;
+            padding: 3px 0;
+            background-color: white;
+            transition: all 0.4s;
+        }
+        form button:hover{
+        background-color: rgb(187, 167, 167);
+        color: white;
+        }
+        form> label{
+          margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="window.location.href = `/main`">
+        <img src="/img/Group 11.png" alt="">
+    </button>
+    <h1>Вход в аккаунт</h1>
+    <form action="/auth" method="post">
+        <div>
+            <label for="nickname">Никнейм</label>
+            <input type="text" name="nickname" id="nickname">
+        </div>
+        <div>
+            <label for="password">Пароль</label>
+            <input type="password" name="password" id="password">
+        </div>
+        <button type="submit">Войти</button>
+    </form>
+
+</body>
+
+</html>

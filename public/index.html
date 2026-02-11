@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Соц. сет</title>
+    <link rel="stylesheet" href="./index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0 auto;
+            padding: 0;
+            font-family: "Jura", sans-serif;
+            font-optical-sizing: auto;
+            font-style: normal;
+        }
+
+        body {
+            background-color: #2A2A2A;
+        }
+
+        header {
+            height: 66px;
+            border-bottom: 6px white solid;
+        }
+
+        main {
+            margin-top: 50px;
+            margin-bottom: 150px;
+            display: flex;
+            flex-direction: column;
+            width: 1440px;
+            gap: 70px;
+        }
+
+        main>div:nth-child(1) {
+            display: flex;
+            gap: 325px;
+            margin-left: 80px;
+        }
+
+        main>div:nth-child(1)>div {
+            display: flex;
+            gap: 300px;
+            margin: 0;
+        }
+
+        main>div:nth-child(1)>div>div {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            transition: scale 0.2s;
+            margin: 0;
+        }
+
+        main>div:nth-child(1)>div>div>hr {
+            width: calc(100px + 38px);
+            height: 15px;
+            border: none;
+            background-color: #D9D9D9;
+        }
+
+        main>div:nth-child(1)>div>div>h1 {
+            color: #EDECEC;
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        main>div:nth-child(1)>button {
+            background-color: rgba(255, 255, 255, 0);
+            border: none;
+            transition: filter 0.2s, translate 0.2s;
+            margin: 0;
+        }
+
+        main>div:nth-child(1)>button:hover {
+            filter: brightness(0.9);
+        }
+
+        main>div:nth-child(1)>button:active {
+            filter: brightness(0.9);
+            translate: 0px 1px;
+        }
+
+        main>div:nth-child(2) {
+            display: flex;
+            gap: 68px;
+        }
+
+        main>div:nth-child(2)>aside {
+            display: flex;
+            flex-direction: column;
+            gap: 267px;
+        }
+
+        main>div:nth-child(2)>aside>div {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            margin: 0;
+        }
+
+        main>div:nth-child(2)>aside>div>img {
+            width: 310px;
+            height: 420px;
+            background-color: #D9D9D9;
+            margin-bottom: 12px;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        main>div:nth-child(2)>aside>div>button:nth-child(3) {
+            background-color: #c5c5c5;
+            width: 310px;
+            height: 24px;
+            color: #424242;
+            font-size: 14px;
+            transition: filter 0.2s, translate 0.2s;
+            border: none;
+        }
+
+        main>div:nth-child(2)>aside>div>button:nth-child(3):hover {
+            filter: brightness(0.9);
+        }
+
+        main>div:nth-child(2)>aside>div>button:nth-child(3):active {
+            filter: brightness(0.9);
+            translate: 0px 1px;
+        }
+
+        main>div:nth-child(2)>aside>div>button:nth-child(2) {
+            background-color: #424242;
+            width: 310px;
+            height: 24px;
+            color: #EDECEC;
+            font-size: 14px;
+            transition: filter 0.2s, translate 0.2s;
+            border: none;
+        }
+
+        main>div:nth-child(2)>aside>div>button:nth-child(2):hover {
+            filter: brightness(0.9);
+        }
+
+        main>div:nth-child(2)>aside>div>button:nth-child(2):active {
+            filter: brightness(0.9);
+            translate: 0px 1px;
+        }
+
+        main>div:nth-child(2)>aside>img {
+            margin: 0;
+        }
+
+        main>div:nth-child(2)>div {
+            margin: 80px 220px 0px 0px;
+        }
+
+        main>div:nth-child(2)>div>div:nth-child(1) {
+            position: absolute;
+            z-index: 10;
+            translate: 220px -80px;
+            border: 2px solid #D9D9D9;
+            padding: 30px;
+
+            display: flex;
+            gap: 249px;
+            background-color: #2A2A2A;
+        }
+
+        main>div:nth-child(2)>div>div:nth-child(1)>h1 {
+            font-size: 14px;
+            color: #EDECEC;
+            font-weight: 400;
+        }
+
+        main>div:nth-child(2)>div>div:nth-child(1)>div {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        main>div:nth-child(2)>div>div:nth-child(1)>div>img {
+            background-color: #FAF8F8;
+            width: 158px;
+            height: 219.39px;
+            object-fit: cover;
+            object-position: center;
+
+        }
+
+        main>div:nth-child(2)>div>div:nth-child(1)>div>img:nth-child(2) {
+            margin-bottom: 15px;
+        }
+
+        main>div:nth-child(2)>div>div:nth-child(2) {
+            position: absolute;
+            z-index: 12;
+            width: 46px;
+            height: 15px;
+            background-color: #2A2A2A;
+            translate: 197px 0px;
+        }
+
+        main>div:nth-child(2)>div>div:nth-child(2)>hr {
+            height: 15px;
+            border: none;
+            border-left: 2px solid #D9D9D9;
+            margin: 0 auto;
+            margin-left: 23px;
+        }
+
+        main>div:nth-child(2)>div>div:nth-child(3) {
+            position: relative;
+            z-index: 11;
+            border: 2px solid #D9D9D9;
+            padding: 30px;
+
+            display: flex;
+            flex-direction: column;
+            gap: 279px;
+            background-color: #2A2A2A;
+            max-width: 538px;
+        }
+
+        main>div:nth-child(2)>div>div:nth-child(3)>div {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin: 0;
+            width: 538px;
+            height: 478px;
+            margin-top: 80px;
+        }
+
+        main>div:nth-child(2)>div>div:nth-child(3)>div>h1 {
+            margin: 0;
+            font-size: 20px;
+            color: #EDECEC;
+            border-top: 2px solid #7C7C7C;
+            padding-top: 6px;
+            font-weight: 400;
+            width: fit-content;
+        }
+
+        main>div:nth-child(2)>div>div:nth-child(3)>div>h1:nth-child(2) {
+            font-size: 16px;
+        }
+
+        main>div:nth-child(2)>div>div:nth-child(3)>div>h1:nth-child(3) {
+            font-size: 15px;
+        }
+
+        main>div:nth-child(2)>div>div:nth-child(3)>div>h1:nth-child(4) {
+            font-size: 14px;
+        }
+
+        main>div:nth-child(2)>div>div:nth-child(3)>div>h1:nth-child(odd) {
+            align-self: flex-start;
+        }
+
+        main>div:nth-child(2)>div>div:nth-child(3)>div>h1:nth-child(even) {
+            align-self: flex-end;
+        }
+
+        main>div:nth-child(2)>div>div:nth-child(3)>h1 {
+            font-size: 12px;
+            color: #EDECEC;
+            border-top: 2px solid #7C7C7C;
+            padding-top: 6px;
+            font-weight: 400;
+            width: fit-content;
+            margin-bottom: 63px;
+            max-width: 70%;
+            text-align: center;
+        }
+
+        main>div:nth-child(2)>div>div:nth-child(4) {
+            position: absolute;
+            z-index: 12;
+            width: 451px;
+            height: 46px;
+            background-color: #2A2A2A;
+            translate: 220px -90px;
+        }
+
+        main>div:nth-child(2)>div>div:nth-child(4)>hr:nth-child(1) {
+            height: 14px;
+            border: none;
+            border-left: 2px solid #D9D9D9;
+            margin: 0;
+            margin-top: 9px;
+        }
+
+        main>div:nth-child(2)>div>div:nth-child(4)>hr:nth-child(2) {
+            width: 451px;
+            border: none;
+            border-bottom: 2px solid #D9D9D9;
+            margin: 0;
+        }
+
+        #blackscreen {
+            position: fixed;
+            z-index: 100;
+            width: 100vw;
+            height: 100vh;
+            background: radial-gradient(circle, rgba(0, 0, 0, 0) 0%, black 85%);
+            opacity: 0.1;
+            user-select: none;
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="blackscreen"></div>
+    <header></header>
+    <main>
+        <div>
+            <button onclick="window.location.href = `/main`">
+                <img src="/img/Group 11.png" alt="">
+            </button>
+        </div>
+        <div>
+            <aside>
+                <div>
+                    <img src="" alt="" class="ava" id="asdasdasd">
+                    <button id="changeBtn">Редактировать</button>
+                    <button id="addFriend">Добавить в друзья</button>
+                </div>
+                <img src="/img/Group 10.png" alt="" id="circle">
+            </aside>
+            <div>
+                <div>
+                    <h1>Картинки профиля</h1>
+                    <div class="imgs">
+                        <img src="" alt="">
+                        <img src="" alt="">
+                        <img src="" alt="">
+                        <img src="" alt="">
+                    </div>
+                </div>
+                <div>
+                    <hr>
+                </div>
+                <div>
+                    <div>
+                        <h1 class="studentName">Имя: Хаметов Тимур Азатович</h1>
+                        <h1 class="studentClass">Классификация: Студент группы 4вб1</h1>
+                        <h1 class="studentAlgorithm">Обычный алгоритм на парах: Гонять балду</h1>
+                        <h1 class="studentDescription">Описание: Аэм не придумал</h1>
+                    </div>
+                    <h1>Сделано в Оренбургском Колледже Экономики и Информатики</h1>
+                </div>
+                <div>
+                    <hr>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="blackscreen">
+    </div>
+
+    <script>
+        var blackOpacity = 0;
+        var mouseon = false;
+
+        document.getElementById('asdasdasd').addEventListener('mouseover', () => {
+            mouseon = true;
+            console.log(mouseon)
+
+        })
+
+        document.getElementById('asdasdasd').addEventListener('mouseout', () => {
+            mouseon = false;
+            console.log(mouseon)
+
+        })
+
+        setInterval(() => {
+            if (mouseon && blackOpacity <= 1) { blackOpacity += 0.01; }
+            else if (!mouseon && blackOpacity >= 0) { blackOpacity -= 0.05; }
+
+            document.getElementById('blackscreen').style.opacity = blackOpacity;
+        }, 50);
+
+        var cricle = document.getElementById('circle');
+        var angle = -3
+
+        setInterval(() => {
+            angle += 0.01;
+            if (angle >= 3) angle = -3;
+            cricle.style.rotate = Math.pow(angle, 3) * 60 + 'deg';
+        }, 10);
+
+        const setUser = async () => {
+            try {
+                const curUid = window.location.href.slice(27);
+                const res = await fetch(`../getUser/${curUid}`);
+                const data = await res.json();
+
+                document.querySelector('.studentName').textContent = `Имя: ${data.name}`;
+                document.querySelector('.studentClass').textContent = `Классификация: ${data.class}`;
+                document.querySelector('.studentAlgorithm').textContent = `Алгоритм поведения: ${data.algorithm}`;
+                document.querySelector('.studentDescription').textContent = `Описание: ${data.description}`;
+                document.querySelector('.imgs').querySelectorAll('img').forEach((img, index) => {
+                    img.setAttribute('src', `/img/${data.imgPathName}/${index + 1}.jpg`);
+                    if (data.nickname == "Timur") {
+                        if (index == 3) {
+                            img.setAttribute('src', `/img/${data.imgPathName}/4.gif`);
+                        }
+                        if (index == 0) {
+                            img.setAttribute('src', `/img/${data.imgPathName}/1.gif`);
+                        }
+                    }
+                })
+                document.querySelector('.ava').setAttribute('src', `/img/${data.imgPathName}/ava.jpg`);
+            } catch (e) {
+                console.log(e);
+            }
+        }
+
+        const curUser = async () => {
+            try {
+                const res = await fetch('http://localhost:3000/getCurUser');
+                const data = await res.json();
+
+                if (!data) {
+                    document.getElementById('changeBtn').style.display = 'none';
+                    document.getElementById('addFriend').onclick = () => window.location.href = "../login";
+                } else {
+                    if (data.uid == window.location.href.slice(27)) {
+                        document.getElementById('addFriend').style.display = 'none';
+                        document.getElementById('changeBtn').onclick = () => window.location.href = "../change";
+                    } else {
+                        document.getElementById('changeBtn').style.display = 'none';
+                    }
+                }
+            } catch (e) {
+                console.log(e);
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            setUser()
+            curUser();
+        });
+    </script>
+
+</body>
+
+</html>
